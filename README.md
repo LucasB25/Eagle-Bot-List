@@ -1,4 +1,3 @@
-[![Version][version-shield]](version-url)
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -131,8 +130,6 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
 
 Distributed under the Apache-2.0 license License. See [`LICENSE`](https://github.com/LucasB25/Eagle-Bot-List/blob/main/LICENSE) for more information.
 
-[version-shield]: https://img.shields.io/github/package-json/v/LucasB25/Eagle-Bot-List?style=for-the-badge
-[version-url]: https://github.com/LucasB25/Eagle-Bot-List
 [contributors-shield]: https://img.shields.io/github/contributors/LucasB25/Eagle-Bot-List.svg?style=for-the-badge
 [contributors-url]: https://github.com/LucasB25/Eagle-Bot-List/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/LucasB25/Eagle-Bot-List.svg?style=for-the-badge
