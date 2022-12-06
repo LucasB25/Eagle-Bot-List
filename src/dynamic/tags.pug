@@ -1,0 +1,360 @@
+doctype html
+include includes/head.pug
+include includes/nav.pug
+meta(name='copyrighted-site-verification', content='c7818fb6caa904dc')
+head
+  meta(property='og:type', content='website')
+  meta(name='revisit-after', content='3 days')
+  meta(name='language', content='EN')
+  meta(name='distribution', content='global')
+  meta(name='rating', content='general')
+  meta(name='PreMiD_details', content='general.viewHome')
+  meta(name='PreMiD_smallImageText', content='Page')
+  meta(name='PreMiD_smallImageKey', content='img_icon_page')
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-109410618-4')
+  script.
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-109410618-4');
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='shortcut icon', type='image/png', href='/assets/img/logo.png')
+  link(rel='stylesheet', href='/assets/css/main.css')
+  link(rel='stylesheet', href='/assets/css/secondary.css')
+  link(rel='stylesheet', href='/assets/css/bootstrap-multiselect.css')
+  link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.14.0/css/all.css', crossorigin='anonymous')
+  script(src='https://www.google.com/recaptcha/api.js')
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+  title Explore Tags | Discord Bots | Eagle Bot-List
+
+<br />
+ .col-md-7
+  .row.thesearch
+    .col-md-12
+      .form-group
+      h2.mb-1
+        span.text-blue.mr-1(style='color:white;font-weight: bold;') Explore millions of Discord Bots
+        .input-group
+          input#searchbar.form-control.form-control-lg.dark_cancel(style=`background:#333333;color:#ffffff; margin-top: 25px;font-weight: bold`, type=`search`, autocomplete=`off`, value=``, placeholder=`Search for specific bots...`) 
+  .container.mb-2
+  a.btn.btn-outline-tag(href='/tag/Utility')
+    i.fas.fa-tools.text-blue.mr-2
+    |  Utility
+  a.btn.btn-outline-tag(href='/tag/Social')
+    i.fas.fa-user-friends.text-blue.mr-2
+    |  Social
+  a.btn.btn-outline-tag(href='/tag/Moderation')
+    i.fas.fa-gavel.text-blue.mr-2
+    |  Moderation
+  a.btn.btn-outline-tag(href='/tag/Fun')
+    i.fas.fa-grin.text-blue.mr-2
+    |  Fun
+  a.btn.btn-outline-tag(href='/tag/Economy')
+    i.fas.fa-sack-dollar.text-blue.mr-2
+    |  Economy
+  a.btn.btn-outline-tag(href='/tag/Games')
+    i.fas.fa-gamepad-alt.text-blue.mr-2
+    |  Games
+  a.btn.btn-outline-tag(href='/tag/Music')
+    i.fas.fa-music-alt.text-blue.mr-2
+    |  Music
+  br
+  hr(style='border-top: 1px solid #636363; float: center;')
+
+  .container.mb-2
+  br
+  h3.display-5.mb-0.mt-2.text-boldest Currently Popular Tags
+  br
+  h4.text-damp Tags that users are using the most!
+  .mb-2(style='min-height:28px;')
+    .p-3.tags_cards(style=`background:#333333;color:#ffffff; margin-top: 25px;font-weight: bold`,)
+      a.btn.btn-outline-tag(href='/tag/Fun')
+        |  Fun 
+        small.text-muted #{Fun}
+      a.btn.btn-outline-tag(href='/tag/Moderation')
+        |  Moderation 
+        small.text-muted #{Moderation}
+      a.btn.btn-outline-tag(href='/tag/Utility')
+        |  Utility 
+        small.text-muted #{Utility}
+      a.btn.btn-outline-tag(href='/tag/Music')
+        |  Music 
+        small.text-muted #{Music}
+      a.btn.btn-outline-tag(href='/tag/24-7 Music')
+        |  24-7 Music 
+        small.text-muted #{Music247}
+      a.btn.btn-outline-tag(href='/tag/Multipurpose')
+        |  Multipurpose 
+        small.text-muted #{Multipurpose}
+      a.btn.btn-outline-tag(href='/tag/Customizable')
+        |  Customizable 
+        small.text-muted #{Customizable}
+
+  .container.mb-2
+  br
+  h3.display-5.mb-0.mt-2.text-boldest All Tags
+  br
+  h4.text-damp A list of all the pre-defined tags currently on our site!
+  .mb-2(style='min-height:28px;')
+    .p-3.tags_cards(style=`background:#333333;color:#ffffff; margin-top: 25px;font-weight: bold`,)
+      a.btn.btn-outline-tag(href='/tag/Utility')
+        |  Utility 
+        small.text-muted #{Utility}
+      a.btn.btn-outline-tag(href='/tag/Social')
+        |  Social 
+        small.text-muted #{Social}
+      a.btn.btn-outline-tag(href='/tag/Moderation')
+        |  Moderation 
+        small.text-muted #{Moderation}
+      a.btn.btn-outline-tag(href='/tag/Fun')
+        |  Fun 
+        small.text-muted #{Fun}
+      a.btn.btn-outline-tag(href='/tag/Economy')
+        |  Economy 
+        small.text-muted #{Economy}
+      a.btn.btn-outline-tag(href='/tag/Games')
+        |  Games 
+        small.text-muted #{Games}
+      a.btn.btn-outline-tag(href='/tag/Music')
+        |  Music 
+        small.text-muted #{Music}
+      a.btn.btn-outline-tag(href='/tag/Meme')
+        |  Meme 
+        small.text-muted #{Meme}
+      a.btn.btn-outline-tag(href='/tag/Anime')
+        |  Anime 
+        small.text-muted #{Anime}
+      a.btn.btn-outline-tag(href='/tag/Leveling')
+        |  Leveling 
+        small.text-muted #{Leveling}
+      a.btn.btn-outline-tag(href='/tag/Roleplay')
+        |  Roleplay 
+        small.text-muted #{Roleplay}
+      a.btn.btn-outline-tag(href='/tag/Role Managment')
+        |  Role Managment 
+        small.text-muted #{Role_Managment}
+      a.btn.btn-outline-tag(href='/tag/Logging')
+        |  Logging 
+        small.text-muted #{Logging}
+      a.btn.btn-outline-tag(href='/tag/Web Dashboard')
+        |  Web Dashboard 
+        small.text-muted #{Web_Dashboard}
+      a.btn.btn-outline-tag(href='/tag/Stream')
+        |  Stream 
+        small.text-muted #{Stream}
+      a.btn.btn-outline-tag(href='/tag/Youtube')
+        |  Youtube 
+        small.text-muted #{Youtube}
+      a.btn.btn-outline-tag(href='/tag/Twitch')
+        |  Twitch 
+        small.text-muted #{Twitch}
+      a.btn.btn-outline-tag(href='/tag/Reddit')
+        |  Reddit 
+        small.text-muted #{Reddit}
+      a.btn.btn-outline-tag(href='/tag/24-7 Music')
+        |  24-7 Music 
+        small.text-muted #{Music247}
+      a.btn.btn-outline-tag(href='/tag/Community')
+        |  Community 
+        small.text-muted #{Community}
+      a.btn.btn-outline-tag(href='/tag/Multipurpose')
+        |  Multipurpose 
+        small.text-muted #{Multipurpose}
+      a.btn.btn-outline-tag(href='/tag/NSFW')
+        |  NSFW 
+        small.text-muted #{nsfw}
+      a.btn.btn-outline-tag(href='/tag/Statistics')
+        |  Statistics 
+        small.text-muted #{Statistics}
+      a.btn.btn-outline-tag(href='/tag/Customizable')
+        |  Customizable 
+        small.text-muted #{Customizable}
+      a.btn.btn-outline-tag(href='/tag/Minecraft')
+        |  Minecraft 
+        small.text-muted #{Minecraft}
+      a.btn.btn-outline-tag(href='/tag/Pokemon')
+        |  Pokemon 
+        small.text-muted #{Pokemon}
+      a.btn.btn-outline-tag(href='/tag/Tickets')
+        |  Tickets 
+        small.text-muted #{Tickets}
+  br
+  br
+  hr(style='border-top: 1px solid #8c8b8b;background-color: #f0f0f0;float: center;')  
+
+include includes/footer.pug
+
+script.
+        const node = document.getElementById("searchbar");
+        node.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+        location.href = `/bots/search/?q=${node.value}`
+        }
+        });
+
+style.
+  .featuresec {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  }
+  .featuresec img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 10px 15px rgb(22, 22, 22);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  }
+  .featurecon {
+  width: 100%;
+  }
+  .col-md-7 { margin: 0 auto; }
+  style.
+  .featuresec {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
+  .featuresec img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 10px 15px rgb(22, 22, 22);
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .hugething,
+  .navbar {
+  background: linear-gradient(90deg, #3366ff, #8000ff, #4d79ff, #0039e6);
+  background-size: 600% 600%;
+  -webkit-animation: jumboani 10s ease infinite;
+  -moz-animation: jumboani 10s ease infinite;
+  animation: jumboani 10s ease infinite;
+  }
+  .dumbfuckingimage {
+  height: 100%;
+  }
+  @-webkit-keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @-moz-keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @media (max-width: 991px) {
+  .featuresec {
+  text-align: center !important;
+  height: auto;
+  }
+  hr {
+  margin: 50px 0;
+  }
+  .dumbfuckingimage {
+  height: auto;
+  }
+  }
+  .display-4 {
+  font-size: 30px !important;
+  }
+  .dank {
+  background: linear-gradient(90deg, rgba(248, 72, 61, 1) 0%, rgba(228, 46, 103, 1) 100%);
+  color: #fff !important;
+  transition: .3s;
+  }
+  .dank:hover {
+  background: #fff !important;
+  color: #7495e6 !important;
+  transition: .3s;
+  }
+  @keyframes hover {
+  0% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  50% {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(22, 22, 22, 0.5);
+  }
+  100% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  }
+  .bot-img {
+  border-radius: 50%;
+  animation: hover 5s ease-in-out infinite;
+  }
+  /*Removes cursor that comes with typed.js*/
+  /*Custom cursor animation*/
+  @-webkit-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  @-moz-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  li {
+  color: #fff !important;
+  }
+  .cont {
+  border: 1px solid #2C2F33;
+  border-radius: 2px;
+  }
+  .jumbotron h1 {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 100px;
+  }
+  .sub {
+  font-size: 18px;
+  color: #fff !important;
+  }
+  .lead {
+  color: #fff !important;
+  }
+  .smol {
+  width: 200px;
+  }
+  #fat {
+  font-weight: 700;
+  }
+  small {
+  color: #969696;
+  }

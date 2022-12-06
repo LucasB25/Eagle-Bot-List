@@ -1,0 +1,288 @@
+doctype html
+include includes/head.pug
+include includes/nav.pug
+meta(name='copyrighted-site-verification', content='c7818fb6caa904dc')
+head
+  meta(property='og:type', content='website')
+  meta(name='revisit-after', content='3 days')
+  meta(name='language', content='EN')
+  meta(name='distribution', content='global')
+  meta(name='rating', content='general')
+  meta(name='PreMiD_details', content='general.viewHome')
+  meta(name='PreMiD_smallImageText', content='Page')
+  meta(name='PreMiD_smallImageKey', content='img_icon_page')
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-109410618-4')
+  script.
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-109410618-4');
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='shortcut icon', type='image/png', href='/assets/img/logo.png')
+  link(rel='stylesheet', href='/assets/css/main.css')
+  link(rel='stylesheet', href='/assets/css/secondary.css')
+  link(rel='stylesheet', href='/assets/css/bootstrap-multiselect.css')
+  link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.14.0/css/all.css', crossorigin='anonymous')
+  script(src='https://www.google.com/recaptcha/api.js')
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+  title Tags | Discord Bots | Eagle Bot-List
+
+.bg-dark.hugething.text-center(style='box-shadow:0 5px 10px #1b1b1b; padding-bottom: 75px!important')
+  br
+  br
+  img.bot-img(src='/assets/img/logo.png', height="150", draggable="false")
+  br
+  h1#fat.mb-0 Eagle Bot-List
+  span Find the Bots that suit you best
+  br
+  span It's available and public for everyone
+  center
+<br /><br />
+
+<br />
+<center>
+ .col-md-7
+  .row.thesearch
+    .col-md-12
+      .form-group
+        .input-group
+          input#searchbar.form-control.form-control-lg.dark_cancel(style=`background:#333333;color:#ffffff;`, type=`search`, autocomplete=`off`, value=``, placeholder=`Search for specific bots...`) 
+  .container.mb-2
+  a.btn.btn-outline-tag(href='/tag/Utility')
+    i.fas.fa-tools.text-blue.mr-2
+    |  Utility
+  a.btn.btn-outline-tag(href='/tag/Social')
+    i.fas.fa-user-friends.text-blue.mr-2
+    |  Social
+  a.btn.btn-outline-tag(href='/tag/Moderation')
+    i.fas.fa-gavel.text-blue.mr-2
+    |  Moderation
+  a.btn.btn-outline-tag(href='/tag/Fun')
+    i.fas.fa-grin.text-blue.mr-2
+    |  Fun
+  a.btn.btn-outline-tag(href='/tag/Economy')
+    i.fas.fa-sack-dollar.text-blue.mr-2
+    |  Economy
+  a.btn.btn-outline-tag(href='/tag/Games')
+    i.fas.fa-gamepad-alt.text-blue.mr-2
+    |  Games
+  a.btn.btn-outline-tag(href='/tag/Music')
+    i.fas.fa-music-alt.text-blue.mr-2
+    |  Music
+  a.btn.btn-outline-tag(href='/tags')
+    i.fas.fa-tags.text-blue.mr-2
+    |  Explore Tags
+  br
+  hr(style='border-top: 1px solid #8c8b8b;background-color: #f0f0f0;float: center;')
+         
+<br /><br />
+
+<center>
+if (cards)
+ .col-auto
+    h2.mb-1
+      h1#fat.mb-0  [#{req.params.tag}] Bots
+ each val, i in cards
+  .card.botcard(style=`transform: translate(0px, 0px); opacity: 1;`)
+    .card-body.p-3.pb-2.botcard-hassplash(style=`border-radius: 4px 4px 0px 0px; background: linear-gradient(rgba(48, 48, 48, 0.3) 50%, rgb(48, 48, 48) 98%), url("${val.banner}");`)
+      // 
+      .row
+        .col.pr-0.imgcol
+          .w-100.text-center
+            img.cardimg(draggable='false' loading='lazy' src=val.logo alt='Bot Avatar' onerror='this.src=`https:\/\/discord.mx/hcvOiDRmYc.jpg`')
+        .col.flexcen
+          .w-100
+            .botcount.mb-2.text-damp.text-bold(data-toggle='tooltip' data-placement='left' title='Votes This Month')
+              span.float-left.text-white.h-100
+                i.fad.fa-chevron-up.pt-1.pb-1
+              | #{val.likes || 0}
+            .botcount.text-damp.text-bold(data-toggle='tooltip' data-placement='left' title='Server Count')
+              span.float-left.text-white.h-100
+                i.fad.fa-list.pt-1.pb-1
+              | N/A
+    .card-body.pt-0.pb-0
+      h4.mb-0.text-center.pt-1
+        | #{val.username}  
+        if(val.certify === true)
+          span.text-blue.mr-1(data-toggle='tooltip' title='Certified Bot')
+            i.fad.fa-badge-check
+      p.mb-2.text-center.text-muted.botdesc 
+        | #{val.description}
+    hr.mt-3.mb-1.bg-secondary
+    .card-body.pt-0.pb-0.text-damp.text-right.bottags
+      span.float-left.text-white.tagicon
+    hr.mt-1.mb-3.bg-secondary
+    .card-body.pt-0.botcard-btnholder
+      a.btn.btn-sm.btn-blue.btn-block(href=`/bots/${val.botid}`) View Bot
+      .btn-group.btn-block
+        a.btn.btn-sm.btn-secondary(style='width:50%;' href=`/bots/like/${val.botid}`) Vote
+        a.btn.btn-sm.btn-secondary(style='border-left:1px solid #2B2B2B; width:50%;' href=`https://discord.com/oauth2/authorize?client_id=${val.botid}&scope=bot&permissions=0`) Invite
+
+style.
+  div.a {
+  display: flex;
+  flex-direction: row;
+  }
+
+include includes/footer.pug
+
+script.
+        const node = document.getElementById("searchbar");
+        node.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+        location.href = `/bots/search/?q=${node.value}`
+        }
+        });
+
+style.
+  .featuresec {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  }
+  .featuresec img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 10px 15px rgb(22, 22, 22);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  }
+  .featurecon {
+  width: 100%;
+  }
+  .hugething,
+  .navbar {
+  background: linear-gradient(90deg, #3366ff, #8000ff, #4d79ff, #0039e6);
+  background-size: 600% 600%;
+  -webkit-animation: jumboani 10s ease infinite;
+  -moz-animation: jumboani 10s ease infinite;
+  animation: jumboani 10s ease infinite;
+  }
+  .dumbfuckingimage {
+  height: 100%;
+  }
+  @-webkit-keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @-moz-keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @keyframes jumboani {
+  0% {
+  background-position: 0% 50%
+  }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  @media (max-width: 991px) {
+  .featuresec {
+  text-align: center !important;
+  height: auto;
+  }
+  hr {
+  margin: 50px 0;
+  }
+  .dumbfuckingimage {
+  height: auto;
+  }
+  }
+  .display-4 {
+  font-size: 30px !important;
+  }
+  .dank {
+  background: linear-gradient(90deg, rgba(248, 72, 61, 1) 0%, rgba(228, 46, 103, 1) 100%);
+  color: #fff !important;
+  transition: .3s;
+  }
+  .dank:hover {
+  background: #fff !important;
+  color: #7495e6 !important;
+  transition: .3s;
+  }
+  @keyframes hover {
+  0% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  50% {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(22, 22, 22, 0.5);
+  }
+  100% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  }
+  .bot-img {
+  border-radius: 50%;
+  animation: hover 5s ease-in-out infinite;
+  }
+  /*Removes cursor that comes with typed.js*/
+  /*Custom cursor animation*/
+  @-webkit-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  @-moz-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  li {
+  color: #fff !important;
+  }
+  .cont {
+  border: 1px solid #2C2F33;
+  border-radius: 2px;
+  }
+  .jumbotron h1 {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 100px;
+  }
+  .sub {
+  font-size: 18px;
+  color: #fff !important;
+  }
+  .lead {
+  color: #fff !important;
+  }
+  .smol {
+  width: 200px;
+  }
+  #fat {
+  font-weight: 700;
+  }
+  small {
+  color: #969696;
+  }

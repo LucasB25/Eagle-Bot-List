@@ -1,0 +1,190 @@
+footer.site-footer
+  .container
+    .row
+      .col-md-3
+        h1.head_title(style='color: #ffffff') Eagle Bot-List
+      .col-xs-6.col-md-3
+        h6 Contact Us
+        ul.footer-links
+          li
+            a(href='https://twitter.com') Twitter
+          li
+            a(href='http://localhost/join') Discord Server
+      .col-xs-6.col-md-3
+        h6 Important Links
+        ul.footer-links
+          li
+            a(href='/') Home
+          li
+            a(href='/privacy') Privacy Policy
+    hr(style='border-top: 1px solid #636363; float: center;')
+  .container
+    .row
+      .col-md-8.col-sm-6.col-xs-12
+        p.copyright-text
+          | Copyright &copy; 2022 All Rights Reserved
+          br
+          | Developed by Panais Development.
+
+style.
+    #button {
+        display: inline-block;
+        background-color: grey;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 4px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s, opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+        text-decoration: none;
+    }
+    #button::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+    }
+    #button:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+    #button:active {
+        background-color: #555;
+    }
+    #button.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    @media (min-width: 500px) {
+        #button {
+        margin: 30px;
+        }
+    }
+    :root {
+        --color-back-primary: rgb(17, 17, 17);
+        --color-text-primary: #66aad8;
+    }
+    .site-footer
+    {
+    background-color: var(--color-back-primary);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin-top: 3rem !important;
+    text-align: initial;
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:24px;
+    color:#737373;
+    }
+    .site-footer hr
+    {
+    border-top-color:#bbb;
+    opacity:0.5
+    }
+    .site-footer hr.small
+    {
+    margin:20px 0
+    }
+    .site-footer h6
+    {
+    color:#fff;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px;
+    }
+    .site-footer a
+    {
+    color:#737373;
+    }
+    .site-footer a:hover
+    {
+    color:#3366cc;
+    text-decoration:none;
+    text-align:center
+    }
+    .footer-links
+    {
+    padding-left:0;
+    list-style:none
+    }
+    .footer-links li
+    {
+    display:block
+    }
+    .footer-links a
+    {
+    color:#737373
+    }
+    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+    {
+    color:#3366ff;
+    text-decoration:none;
+    }
+    .footer-links.inline li
+    {
+    display:inline-block
+    }
+    .site-footer .social-icons
+    {
+    text-align:right
+    }
+    .site-footer .social-icons a
+    {
+    width:40px;
+    height:40px;
+    line-height:40px;
+    margin-left:6px;
+    margin-right:0;
+    border-radius:100%;
+    background-color:#33353d
+    }
+    .copyright-text
+    {
+    margin:0;
+    }
+    @media (max-width:991px)
+    {
+    .site-footer [class^=col-]
+    {
+        margin-bottom:30px
+    }
+    }
+    @media (max-width:767px)
+    {
+    .site-footer
+    {
+        padding-bottom:0
+    }
+    .site-footer .copyright-text,.site-footer .social-icons
+    {
+        text-align:center
+    }
+    }
+    background-color:#ea4c89
+    }
+    @media (max-width:767px)
+    {
+    }
+
+a#button
+script.
+  var btn = $('#button');
+  $(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+  btn.addClass('show');
+  } else {
+  btn.removeClass('show');
+  }
+  });
+  btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+  });

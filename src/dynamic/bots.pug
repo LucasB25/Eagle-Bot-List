@@ -1,0 +1,346 @@
+head
+include includes/nav.pug
+  meta(property='og:title', content=bot.username)
+  meta(name='twitter:title', content=bot.username)
+  meta(property='og:description', content=bot.description)
+  meta(name='description', content=bot.description)
+  meta(property='twitter:description', content=bot.description)
+  meta(name='og:image', content=bot.logo)
+  meta(name='twitter:image', content=bot.logo)
+  meta(name='author', content='Eagle Bot-List')
+  meta(name='theme-color', content='#171717')
+  meta(name='og:site_name', content='Eagle Bot-List')
+  meta(property='og:type', content='website')
+  meta(name='revisit-after', content='3 days')
+  meta(name='copyright', content='Eagle Bot-List')
+  meta(name='language', content='EN')
+  meta(name='distribution', content='global')
+  meta(name='rating', content='general')
+  meta(name='PreMiD_details', content='general.viewing')
+  meta(name='PreMiD_state', content=bot.username)
+  meta(name='PreMiD_smallImageText', content='Bot')
+  meta(name='PreMiD_smallImageKey', content='img_icon_robot')
+  meta(name='PreMiD_button_1_Label', content='View Bot')
+  meta(name='PreMiD_button_1_Url', content=`http://localhost/bots/#{bot.botid}`)
+  title #{bot.username} | Discord Bots | Eagle Bot-List
+  link(rel='shortcut icon', content=bot.logo, type='image/png')
+
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-109410618-4')
+  script.
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-109410618-4');
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='stylesheet', href='/assets/css/main.css')
+  link(rel='stylesheet', href='/assets/css/secondary.css')
+  link(rel='stylesheet', href='/assets/css/bootstrap-multiselect.css')
+  link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.14.0/css/all.css', crossorigin='anonymous')
+  script(src='https://www.google.com/recaptcha/api.js')
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+  link(rel='stylesheet', href='/assets/css/bootstrap-toaster.css')
+style.
+  .botdesc img {max-width:100% !important;}
+  .botdesc table {max-width:100% !important;}
+  .botlogo {
+  max-width:100%;
+  border-radius:100%;
+  margin:auto 0;
+  max-height:150px;
+  }
+  @media only screen and (max-width: 767px)
+
+    
+.bg-dark.hugething.text-center
+  br
+  br
+  .bot-section
+    img.bot-img(src=bot.logo, height="150")
+    .bot-section-right
+      h1#fat.mb-2 #{bot.username}
+        if (bot.certify)
+          span.text-blue.mr-1(data-toggle='tooltip' title='Certified Bot' style="font-size: 37.5px; margin-left: 12.5px")
+            i.fad.fa-badge-check
+      span #{bot.description}
+  br
+  br
+  br
+br
+br
+.container
+  .row
+    .col-xl-3.col-lg-4.col-md-4.col-sm-12.leftcards.mb-5
+      .bot__options.w-100.mb-5
+        h5.mb-3
+          span.text-success.mr-1
+            i.fad.fa-tasks
+          | Tools
+        a.btn.btn-blue.btn-block.btn-icon(target='_blank' href=bot.invite ? bot.invite : `https://discord.com/oauth2/authorize?client_id=${bot.botid}&scope=bot&permissions=0`)
+          .btnicon-icon
+            i.fas.fa-plus-square
+          span.btnicon-content Invite
+        a.btn.btn-success.btn-block.btn-icon(href=`/bots/like/${bot.botid}`)
+          .btnicon-icon
+            i.fas.fa-chevron-up
+          span.btnicon-content Vote
+        if req.user && req.user.id && req.user.staff && bot.owners.primary && bot.owners.additional
+         a.btn.btn-info.btn-block.btn-icon(href=`/bots/edit/${bot.botid}`)
+           .btnicon-icon
+             i.fas.fa-pen
+           span.btnicon-content Edit Bot
+
+      .bot__overview.w-100.mb-5
+        h5.mb-3
+          span.text-info.mr-1
+            i.fad.fa-question-circle
+          |  Bot Information
+        
+        .common__infocard.d-flex
+          .common__infocard-icon.text-damp
+            i.fas.fa-exclamation
+          span.common__infocard-content
+            b Prefix
+            span.float-right
+              | #{bot.prefix}
+
+        .common__infocard.d-flex
+          .common__infocard-icon.text-damp
+            i.fas.fa-vote-yea
+          span.common__infocard-content
+            b Votes
+            span.float-right(href=`/bots/like/#{bot.botid}`)
+              | #{bot.likes || 0}
+
+        .common__infocard.d-flex
+          .common__infocard-icon.text-damp
+            i.fas.fa-clock
+          span.common__infocard-content
+            b Servers
+            if (servers)
+              span.float-right
+                | #{`${servers} servers`}
+            else
+              span.float-right(href=`/bots/like/#{bot.botid}`)
+                | N/A
+        
+        .common__infocard.d-flex
+          .common__infocard-icon.text-damp
+            i.fas.fa-clock
+          span.common__infocard-content
+            b Added
+            span.float-right
+              | #{bot.addedAt}
+
+      .bot__tags.w-100.mb-5
+          h5.mb-3
+            span.text-success.mr-1
+              i.fad.fa-tags
+            |  Tags
+          if (bot.tags)
+            p.tag-holder
+              each tag in bot.tags
+                a.badge.badge-secondary.mb-1(href=`/tag/${tag}`, style='margin-right:3px;') #{tag}
+          else
+             .common__infocard.d-flex
+              .common__infocard-icon.text-damp
+                i.fad.fa-tags
+              span.common__infocard-content
+                b Tags Not Set
+
+      #owners
+      .bot__owners.w-100.mb-5
+        h5.mb-3
+          span.text-warning.mr-1
+            i.fad.fa-crown
+          |  Owner
+        each person in owners
+          a.btn.btn-dark.btn-block.btn-icon(href=`/user/${person.id}`)
+            img(src=person.tag !== 'Unknown User'  ? person.displayAvatarURL({format: "png", size: 256, dynamic: true}) : '/assets/default-avatar.png')
+            span.btnicon-content
+              | #{person.username}
+              small.text-muted ##{person.discriminator}
+
+      .bot__links.w-100
+        h5.mb-3
+          span.text-danger.mr-1
+            i.fad.fa-link
+          |  Links
+        if (bot.github)
+          a.btn.btn-blue.btn-block.btn-icon(target='_blank' href=`${bot.github}`)
+           .btnicon-icon
+            i.fab.fa-github
+           span.btnicon-content Github
+
+        if (bot.donation)
+          a.btn.btn-info.btn-block.btn-icon(target='_blank' href=`${bot.donation}`)
+            .btnicon-icon
+              i.fas.fa-donate
+            span.btnicon-content Donate
+        if (bot.website)
+          a.btn.btn-success.btn-block.btn-icon(target='_blank' href=`${bot.website}`)
+           .btnicon-icon
+            i.fas.fa-globe
+           span.btnicon-content Website
+        if (bot.support)
+          a.btn.btn-discord.btn-block.btn-icon(target='_blank' href=`${bot.support}`)
+            .btnicon-icon
+              i.fab.fa-discord
+            span.btnicon-content Discord Server
+        
+    .col-xl-9.col-lg-8.col-md-8.col-sm-12
+      .p-3.bot__desccard
+        .botdesc.markdown
+          .b !{desc}
+
+
+include includes/footer.pug
+
+script.
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-109410618-4');
+
+style.
+  .botcount {
+    width:100%;
+    padding:6px 12px;
+    background:#262626;
+    border-radius:4px;
+    text-align:right;
+    cursor:default;
+    height:34px;
+    overflow:hidden;
+  }
+
+  .bot-section { display: flex; }
+  .bot-img { position: relative; display: inline-flex; }
+  .text-center { padding-left: 9%; text-align: inherit!important }
+  .bot-section-right { margin-left: 25px; margin-top: 7.5px; }
+  
+  div.b { width: 100%; }
+  div.b { word-wrap: break-word; }
+
+  .featuresec {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
+  .featuresec img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 10px 15px rgb(22, 22, 22);
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .featurecon { width: 100%; }
+  .hugething, .navbar {
+    max-height: 245px;
+    background-color: #171717;
+    background-size: 500% 500%;
+  }
+  .dumbfuckingimage { height: 100%; }
+  @-webkit-keyframes jumboani {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  @-moz-keyframes jumboani {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  @keyframes jumboani {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  @media (max-width: 991px) {
+  .featuresec {
+  text-align: center !important;
+  height: auto;
+  }
+  hr {
+  margin: 50px 0;
+  }
+  .dumbfuckingimage {
+  height: auto;
+  }
+  }
+  .display-4 {
+  font-size: 30px !important;
+  }
+  .dank {
+  background: linear-gradient(90deg, rgba(248, 72, 61, 1) 0%, rgba(228, 46, 103, 1) 100%);
+  color: #fff !important;
+  transition: .3s;
+  }
+  .dank:hover {
+  background: #fff !important;
+  color: #7495e6 !important;
+  transition: .3s;
+  }
+  @keyframes hover {
+  0% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  50% {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(22, 22, 22, 0.5);
+  }
+  100% {
+  transform: translateY(0px);
+  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.5);
+  }
+  }
+  .bot-img {
+  border-radius: 50%;
+  animation: hover 5s ease-in-out infinite;
+  }
+  /*Removes cursor that comes with typed.js*/
+  /*Custom cursor animation*/
+  @-webkit-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  @-moz-keyframes blink {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
+  li {
+  color: #fff !important;
+  }
+  .cont {
+  border: 1px solid #2C2F33;
+  border-radius: 2px;
+  }
+  .jumbotron h1 {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 100px;
+  }
+  .sub {
+  font-size: 18px;
+  color: #fff !important;
+  }
+  .lead {
+  color: #fff !important;
+  }
+  .smol {
+  width: 200px;
+  }
+  #fat {
+  font-weight: 700;
+  }
+  small {
+  color: #969696;
+  }
