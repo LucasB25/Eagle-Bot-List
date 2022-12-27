@@ -34,7 +34,6 @@ route.post("/:id", auth, async function (req, res) {
   // Send messages
   let owners = [bot.owners.primary].concat(bot.owners.additional);
   let modLog = await req.app.get("client").channels.cache.get(mod_log_id);
-  console.log(owners, owners.map((x) => (x ? `<@${x}>` : "")))
   modLog.send(
     new MessageEmbed()
       .setTitle("Bot Approved")
