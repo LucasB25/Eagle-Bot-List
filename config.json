@@ -1,36 +1,36 @@
 {
   "discord_client": {
-    "id": "BOT_ID_HERE",
-    "token": "TOKEN_HERE",
-    "secret": "SECRET_HERE",
-    "prefix": "PREFIX"
+    "id": "708363285140865116",
+    "token": "NzA4MzYzMjg1MTQwODY1MTE2.GzEWNR.msdVWycWJ92Ln0Oe4M7jje87-z0kOR7sWIifTQ",
+    "secret": "ZTF__ZP8V3c2iLYWrrVo60A365i2HEXr",
+    "prefix": "!"
   },
   "web": {
     "domain_with_protocol": "http://localhost",
     "port": 80,
     "ratelimit": 100,
     "recaptcha_v2": {
-      "site_key": "SITE_KEY_HERE",
-      "secret_key": "SECRET_KEY_HERE"
+      "site_key": "6LfcrS0cAAAAAKdX3v07J8dgE5dMG_1JY4pFOvl8",
+      "secret_key": "6LfcrS0cAAAAACAtkJJX_Hl9uMSkA2HE04hDavx7"
     }
   },
-  "mongo_url": "MONGO_URL",
+  "mongo_url": "mongodb+srv://root:&2003&@cluster0.wjz14.mongodb.net/test?retryWrites=true&w=majority",
   "server": {
-    "id": "SERVER_ID_HERE",
+    "id": "639211220280541194",
     "invite": "https://discord.gg/fbJFAs43vD",
-    "like_log": "VOTE__CHANNEL_ID_HERE",
-    "botOwners": "OWNER_ID_HERE",
-    "mod_log_id": "MOD__CHANNEL_ID_HERE",
-    "website_logs": "WEBSITE__CHANNEL_ID_HERE",
-    "admin_user_ids": ["ADMIN_ID_HERE"],
+    "like_log": "726861719120380034",
+    "botOwners": "633779863840489484",
+    "mod_log_id": "726861719120380034",
+    "website_logs": "726861719120380034",
+    "admin_user_ids": ["633779863840489484"],
     "role_ids": {
-      "bot": "BOT_ROLE_ID_HERE",
-      "bot_verifier": "BOT_VERIFIER_ROLE_ID_HERE",
-      "bot_developer": "BOT_DEVELOPPER_ROLE_ID_HERE",
-      "cert_user": "CERTIF_USER_ROLE_ID_HERE",
-      "cert_bot": "CERTIF_BOT_ROLE_ID_HERE"
+      "bot": "643512127335956491",
+      "bot_verifier": "643512127335956491",
+      "bot_developer": "643512127335956491",
+      "cert_user": "643512127335956491",
+      "cert_bot": "643512127335956491"
     },
-    "botreviewer": ["REVIEWER_ID_HERE"]
+    "botreviewer": ["633779863840489484"]
   },
   "bot_options": {
     "bot_tags": [
@@ -56,49 +56,11 @@
       "Community",
       "Multipurpose",
       "Giveaways",
-      "NSFW",
       "Statistics",
       "Customizable",
       "Minecraft",
       "Pokemon",
       "Tickets"
-    ],
-    "bot_libraries": [
-      "discljord",
-      "aegis.cpp",
-      "D++",
-      "Sleepy Discord",
-      "discordcr",
-      "Discord.Net",
-      "DSharpPlus",
-      "dscord",
-      "coxir",
-      "Nostrum",
-      "DiscordGo",
-      "DisGord",
-      "catnip",
-      "Discord4J",
-      "Javacord",
-      "JDA",
-      "discord.js",
-      "Eris",
-      "Discord.jl",
-      "Discordia",
-      "Dimscord",
-      "discordnim",
-      "DiscordPHP",
-      "RestCord",
-      "discord.py",
-      "disco",
-      "discordrb",
-      "discord-rs",
-      "Serenity",
-      "Twilight",
-      "AckCord",
-      "Sword",
-      "Detritus",
-      "discordeno",
-      "Harmony"
     ],
     "max_bot_tags": 6,
     "max_owners_count": 3,

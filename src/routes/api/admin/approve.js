@@ -38,13 +38,15 @@ route.post("/:id", auth, async function (req, res) {
     new MessageEmbed()
       .setTitle("Bot Approved")
       .setURL(`http://localhost/bots/${bot.botid}`)
-      .addField(`Bot`, `<@${bot.botid}>`, true)
-      .addField(
-        `Owner(s)`,
-        owners.map((x) => (x ? `<@${x}>` : "")),
-        true
+      .addFields(
+        { name: "Bot", value: `<@${bot.botid}>`, inline: true },
+        {
+          name: `Owner(s)`,
+          value: owners.map((x) => (x ? `<@${x}>` : "")),
+          inline: true,
+        },
+        { name: "Reviewer", value: `<@${req.user.id}>`, inline: true }
       )
-      .addField("Reviewer", `<@${req.user.id}>`, true)
       .setThumbnail(botUser.displayAvatarURL({ format: "png", size: 256 }))
       .setTimestamp()
       .setColor("57aa71")
