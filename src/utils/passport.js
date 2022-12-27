@@ -8,7 +8,7 @@ var scopes = ['identify', 'guilds'];
 passport.use(new Strategy({
     clientID: id,
     clientSecret: secret,
-    callbackURL: `${domain_with_protocol}/api/callback`,
+    callbackURL: `${domain_with_protocol}api/callback`,
     scope: scopes
 },
 function(accessToken, refreshToken, profile, cb) {

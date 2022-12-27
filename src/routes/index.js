@@ -16,7 +16,7 @@ route.get('/', async (req, res) => {
   let certifiedbots = await Bots.find({certify: true}, { _id: false, auth: false, __v: false, addedAt: false })
   certifiedbots.sort((a, b) => b.likes - a.likes);
     if (certifiedbots == '') {
-        certifiedbots = null
+        // certifiedbots = null
     }
     if (!req.query.q) res.render('index', {req, bots: certifiedbots});
     else res.redirect(`/bots/search?q=${encodeURIComponent(req.query.q)}`)
