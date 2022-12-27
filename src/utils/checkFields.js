@@ -52,9 +52,10 @@ module.exports = async (req, b = null) => {
   if (String(data.note).length > max_summary_length) return { success: false, message: "Your note is too long." };
 
   // Check if summary or note has HTML.
-  if (is(data.description))
+  const pattern = (/<(?=.*? .*?\/ ?>|br|hr|input|!--|wbr)[a-z]+.*?>|<([a-z]+).*?<\/\1>/i);
+  if (pattern.test(data.description))
     return { success: false, message: "HTML is not supported in your bot summary" }
-  if (is(data.note))
+  if (pattern.test(data.note))
     return { success: false, message: "HTML is not supported in your note" }
 
   // Check that the bot's HTML description isn't too long
