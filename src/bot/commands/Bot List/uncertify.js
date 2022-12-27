@@ -68,13 +68,15 @@ module.exports = {
     let e = new MessageEmbed()
       .setTitle("Bot Un-Certified")
       .setURL(`http://localhost/bots/${bot.botid}`)
-      .addField(`Bot:`, `<@${bot.botid}>`, true)
-      .addField(
-        `Owner(s):`,
-        owners.map((x) => (x ? `<@${x}>` : "")),
-        true
+      .addFields(
+        { name: "Bot", value: `<@${bot.botid}>`, inline: true },
+        {
+          name: `Owner(s)`,
+          value: owners.map((x) => (x ? `<@${x}>` : "")),
+          inline: true,
+        },
+        { name: "Reviewer", value: `<@${message.author.tag}>`, inline: true }
       )
-      .addField("Reviewer:", message.author, true)
       .setThumbnail(botUser.displayAvatarURL({ format: "png", size: 256 }))
       .setColor("#ff9800");
     modLog.send(e);

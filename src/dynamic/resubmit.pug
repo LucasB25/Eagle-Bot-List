@@ -98,7 +98,7 @@ include includes/nav.pug
               label.mb-1 Detailed Description
               #editor
               textarea#longdesc.form-control(rows='7') #{bot.long}
-              small.form-text.text-muted Max 50.000 length, description of your bot with much details. 
+              small.form-text.text-muted Max 10.000 length, description of your bot with much details. 
                 span.text-danger (Required)
 
           .col-md-6
@@ -137,7 +137,7 @@ include includes/nav.pug
             .form-group
               label.mb-1 Custom Banner
               input#banner.input.form-control(type='text' maxlength="48" placeholder=' ' value=bot.banner)
-              small.form-text.text-muted Only [imgur] allowed)
+              small.form-text.text-muted Only [imgur] allowed
                 span.text-danger  (Eg: https://imgur.com/0rHVeS2l.png)
 
           .col-md-12

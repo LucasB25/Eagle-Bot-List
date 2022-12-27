@@ -22,10 +22,11 @@ module.exports = {
       cont = "```Oops! It seems like nobody applied a new bot!```";
 
     let embed = new MessageEmbed()
-      .setAuthor(
-        `${message.author.tag} here is the botlist queue`,
-        message.author.displayAvatarURL({ format: "png", size: 256 })
-      )
+
+      .setAuthor({
+        name: `${message.author.tag} here is the botlist queue`,
+        iconURL: message.author.displayAvatarURL({ format: "png", size: 256 }),
+      })
       .setColor("ORANGE")
       .setDescription(cont);
     message.channel.send(embed);
