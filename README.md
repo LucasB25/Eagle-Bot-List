@@ -128,7 +128,8 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
 
 ## 🔐 License
 
-Distributed under the Apache-2.0 license License. See [`LICENSE`](https://github.com/LucasB25/Eagle-Bot-List/blob/main/LICENSE) for more information.
+- Distributed under the Apache-2.0 license License. See [`LICENSE`](https://github.com/LucasB25/Eagle-Bot-List/blob/main/LICENSE) for more information.
+- You must mention Panais Développement, in the footer.
 
 [contributors-shield]: https://img.shields.io/github/contributors/LucasB25/Eagle-Bot-List.svg?style=for-the-badge
 [contributors-url]: https://github.com/LucasB25/Eagle-Bot-List/graphs/contributors
@@ -140,3 +141,4 @@ Distributed under the Apache-2.0 license License. See [`LICENSE`](https://github
 [issues-url]: https://github.com/LucasB25/Eagle-Bot-List/issues
 [license-shield]: https://img.shields.io/github/license/LucasB25/Eagle-Bot-List.svg?style=for-the-badge
 [license-url]: https://github.com/LucasB25/Eagle-Bot-List/blob/main/LICENSE
+
