@@ -46,7 +46,7 @@ route.post("/:id", auth, async function (req, res) {
         { name: "Bot", value: `<@${bot.botid}>`, inline: true },
         {
           name: `Owner(s)`,
-          value: owners.map((x) => (x ? `<@${x}>` : "")),
+          value: `${owners.map((x) => (x ? `<@${x}>` : ""))}`,
           inline: true,
         },
         {
