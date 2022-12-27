@@ -12,7 +12,8 @@
 - ✅ Bot Tags
 - ✅ And much more!
 - ✅ Server count API
-- ✅ MARKDOWN descriptions
+- ✅ Support MARKDOWN descriptions
+- ✅ Support HTML descriptions
 
 ## 📎 Requirements
 
