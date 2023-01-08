@@ -130,7 +130,7 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
 ## 🔐 License
 
 - Distributed under the Apache-2.0 license License. See [`LICENSE`](https://github.com/LucasB25/Eagle-Bot-List/blob/main/LICENSE) for more information.
-- You must mention Panais Développement, in the footer.
+- You must leave the mention of Panais development, in the footer.
 
 [contributors-shield]: https://img.shields.io/github/contributors/LucasB25/Eagle-Bot-List.svg?style=for-the-badge
 [contributors-url]: https://github.com/LucasB25/Eagle-Bot-List/graphs/contributors
