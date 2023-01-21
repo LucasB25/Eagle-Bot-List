@@ -106,10 +106,6 @@ Then turn on both of those Settings and click "Save Changes". Then you are done 
 
 <!-- ABOUT THE PROJECT -->
 
-## 🌀 About
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=LucasB25&repo=Eagle-Bot-List&theme=tokyonight)](https://github.com/LucasB25/Eagle-Bot-List)
-
 ## 💌 Support Server
 
 [![DiscordBanner](https://invidget.switchblade.xyz/fbJFAs43vD)](https://discord.gg/fbJFAs43vD)<br />
