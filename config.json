@@ -9,12 +9,12 @@
     "domain_with_protocol": "http://localhost",
     "port": 80,
     "ratelimit": 100,
-    "recaptcha_v2": {
+    "recaptcha_v2": { //https://www.google.com/recaptcha/about/
       "site_key": "SITE_KEY_HERE",
       "secret_key": "SECRET_KEY_HERE"
     }
   },
-  "mongo_url": "MONGO_URL",
+  "mongo_url": "MONGO_URL", //https://mongodb.com/cloud/atlas/register
   "server": {
     "id": "SERVER_ID_HERE",
     "invite": "https://discord.gg/fbJFAs43vD",
