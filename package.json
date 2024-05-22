@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "canvas": "2.11.2",
-    "canvas-constructor": "5.0.2",
+    "canvas-constructor": "7.0.2",
     "cookie-parser": "1.4.6",
     "discord.js": "13.17.1",
     "express": "4.18.2",
